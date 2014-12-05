@@ -1,0 +1,17 @@
+compile = "SelectiveRepeat.c"
+winopen = true
+probframecorrupt = 11
+propagationdelay = 400us
+bandwidth = 56Kbps
+
+host Dehradun {
+    messagerate = 50us
+    winx=0, winy=50    
+    link to KGP
+}
+
+host KGP {
+    messagerate = 5us
+    winx=50, winy=100
+    east east of Dehradun
+}

@@ -1,0 +1,18 @@
+Controlling pdf's on Remote Desktops
+
+
+Consider a situation where a number of participants have to refer to copies of a PDF document using a particular viewer, say okular. Let the session be co-ordinated by a lead user running a server process. The lead user wishes to co-ordinate the viewing of the document by all the participants.
+
+This is to be achieved by controlling the state of the display of each of the participants by the lead user. The state of the display is characterised by:
+
+the contents of the pdf document
+the size of the window,
+the zoom level
+the page being displayed
+The lead user runs the server processes to which other clients can connect. After the connection is achieved, the server process sends the desired state of the display to the client. It is the responsibility of the client to ensure that the display faithfully conforms to the desired state.
+
+A suitable tool (such as xdotool) may be used to effect the display state by simulating keyboard input and mouse activity, move and resize window actions, etc. A conveniently simple mechanism may be used on the server side to alter the state of the display, without necessarily having to capture GUI events resulting from actions performed directly on the viewer running on the server side. Infact, the state of the viewer on the server side may be updated from the display state, exactly as it is done on the client side.
+
+Write a TCP client-server system to achieve the desired client-server interaction. Note that multiple clients should be able to connect to a particular server.
+
+Generalise your system, so that the server first indicates the interaction sessions currently active. The client should be able to choose a particular session to follow according to the scheme given earlier.

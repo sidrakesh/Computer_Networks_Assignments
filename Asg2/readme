@@ -1,0 +1,13 @@
+Consider a situation where a common medium is to be used by multiple users (2 users u1 and u2 for this experiment) for voice communication (signal spectrum 20-3.5kHz). They are to use frequency division multiplexing (FDM) on two adjacent frequency bands (with mid-frequencies f1 and f2) of about 4kHz for sharing the medium in the VHF band (0.5×108 ≤ f ≤ 5×108). It is, therefore, necessary to shift the frequencies of signals gathered from u1 and u1 to the f1 and f2 bands. There are various aspects to this experiment. Necessary programs may be written in 'C' / 'C++'.
+
+Analog transmission over a noiseless channel
+
+The frequency shifting can be done by carrying out FFT on the waveforms of u1 and u2 with sufficient points to cover the voice spectrum; these coefficients can then be placed at the roots of unity spanning the VHF band, but present in the bands for f1 and f2. The composite waveform for transmission after frequency translation is created by application of IFFT (in the VHF band) to the entire set of coefficients after combining and is to be viewed in the waveform viewer. This is the waveform that reaches the other end. FFT is carried out on this waveform to recover the coefficients of u1 and u2; those are translated back to their original positions and the original waveforms are recovered by an application of IFFT and also to be view on the waveform viewer and compared with the original waveforms, both visually and quantitatively.
+You should experiment with the separation of the mid-frequencies and determine the optimal level and check the results with the theoretical requirements (of OFDM). Since frequency components present span only a few bands, try to identify whether any useless computation is done (and consider how that may be avoided) during the regular FFT/IFFT computation.
+
+Analog transmission over a noisy channel
+
+The experiment for the case of analog transmission over a noiseless channel is to be performed again in the present of a bounded amount of noise. The waveforms at various stages are to be compared to the original versions, both visually and quantitatively. Assume noise level of 30dB.
+Digital transmission over a noisy channel
+
+After the IFFT step, carry out a quantization of the sample values. Work out the experiment as for the previous case, but use the quantization to recover the original quantized sample values. The waveforms at various stages are to be compared to the original versions, both visually and quantitatively. You should experiment with the quantization levels and determine the optimal level and check the results with the theoretical requirements (of Shannon's theorem).

@@ -1,0 +1,13 @@
+compile	= "SimpleARQ.c"
+winopen = true
+probframecorrupt = 11,
+probframeloss = 3,
+bandwidth = 10Mbps,
+propagationdelay = 400us,   
+
+host Dehradun {
+   link to KGP
+}
+
+host KGP {
+}

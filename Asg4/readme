@@ -1,0 +1,12 @@
+ARQ Protocol and NS2
+
+
+Let the size of a regular frame be 512 bits and that of an ACK frame be 48 bits. Let the transmission error probability due to noise be p. Assume that the frame is "lost" if any of the first 64 bits of the frame is in error. Let the transmission time be 50μs for a regular frame and and 5μs for an ACK frame. Propagation delay from source to destination is to be taken as 400μs. Let the timeout period be 3600μs
+Assume that the transmitter initially has 10000 packets that it needs to send to the receiver.
+
+In practice, the presence of error will be detected with the help of the checkbits computed using error detection codes. For the experiment, it will be sufficient to indicate a frame in error using a flag.
+
+Develop a simulation framwork (C++ and NS-2 ) for simulating the protocols described above.
+Except for the first case, you are required to determine the throughput achieved by the protocol and the condition of achieving the highest possible throughput.
+You need to study the effect of varying p and the window sizes on the throughput, depicting the results graphically in three separate 3-D plot data files (supply gnuplot data and command to create plot in single file, reading from STDIN after the command and ending the stream with "EOF").
+In your report justify the permissible limits on the window size when k bits are available to encode the window sequence numbers. Also, identify scenarios where failures can happen if the window size is exceeded.

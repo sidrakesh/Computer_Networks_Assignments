@@ -1,0 +1,3 @@
+my.pdf
+l7.pdf
+okular.pdf

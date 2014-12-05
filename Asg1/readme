@@ -1,0 +1,9 @@
+You're to create a source signal by superimposing 5 sinusoids that are randomly chosen, ensuring that the maximum frequency of the signal is limited to fmax. The composite signal should be displayed graphically.
+
+Next, the composite signal should be sampled at a chosen sampling frequency and quantized with some chosen levels of quantization. The quantized signal should be distorted with random noise that is characteristic to the channel.
+
+You need to reconstruct the original signal from the noisy signal samples (by way of cubic spline interpolation, say). The reconstructed signal should also be graphically displayed, against the original signal.
+
+Compare the reconstructed signal to the original signal and determine the Mean Squared Error value indicating how well the reconstructed signal matches the original. An error value of 0 means a perfect match.
+
+For a particular composite signal that is generated, while experimenting with various sampling rates, try to estimate fmax.
